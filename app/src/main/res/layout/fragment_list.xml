@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.list.ListFragment">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_user"
+        tools:listitem="@layout/item_todo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+        app:spanCount="2" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fb_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="?colorSurfaceVariant"
+        android:clickable="true"
+        android:contentDescription="@string/description_add_button"
+        android:focusable="true"
+        android:src="@drawable/ic_add" />
+
+    <ImageView
+        android:id="@+id/iv_no_data"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerInParent="true"
+        android:alpha="0.6"
+        android:contentDescription="@string/description_no_data_image"
+        android:src="@drawable/ic_no_data"
+        android:visibility="invisible" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_no_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/iv_no_data"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:alpha="0.6"
+        android:text="@string/text_no_data"
+        android:textSize="18sp"
+        android:visibility="invisible" />
+</RelativeLayout>
